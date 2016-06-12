@@ -1,3 +1,4 @@
+mkdir -p ~/.vim
 rm -rf ~/.vim/bundle
 cp -rf bundle ~/.vim/
 cp -rf dep/alpine/gotools/* /usr/local/bin/
