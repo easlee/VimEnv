@@ -1,5 +1,5 @@
 " ------------   Author : Easlee Liu
-" ------------    Email : easlee@outlook.com
+" ------------    Email : liu@easlee.me
 " ------------     Date : 2013/2/22
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -135,9 +135,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme="powerlineish"
 " 使用 < （Shift + ,）选择上一个缓冲区
-noremap <unique>< :bp<CR>
+noremap <unique><LEFT> :bp<CR>
 " 使用 > （Shift + .）选择下一个缓冲区
-noremap <unique>> :bn<CR>
+noremap <unique><RIGHT> :bn<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " CtrlP
