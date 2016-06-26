@@ -135,9 +135,9 @@ nnoremap <silent> <unique> <leader>tl :TaskList<CR>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme="powerlineish"
-" 使用 < （Shift + ,）选择上一个缓冲区
+" 使用左箭头选择上一个缓冲区
 noremap <unique><LEFT> :bp<CR>
-" 使用 > （Shift + .）选择下一个缓冲区
+" 使用右箭头选择下一个缓冲区
 noremap <unique><RIGHT> :bn<CR>
 
 """"""""""""""""""""""""""""""""""""""""
