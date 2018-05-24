@@ -85,6 +85,8 @@ filetype plugin on		    " 针对不同的文件类型加载对应的插件
 filetype plugin indent on	" 启动自动补全
 
 let mapleader = ","
+set relativenumber
+
 
 "set autochdir               " 自动切换工作路径
 """"""""""""""""""""""""""""""""""""""""
@@ -135,6 +137,16 @@ nnoremap <silent> <unique> <leader>tl :TaskList<CR>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme="powerlineish"
+if !exists('g:airline_symbols')                                               
+    let g:airline_symbols = {}                                                  
+endif 
+let g:airline_left_sep = ' '                                                                                                                                                                              
+let g:airline_left_alt_sep = ' '                                             
+let g:airline_right_sep = ' '                                                
+let g:airline_right_alt_sep = ' '                                            
+let g:airline_symbols.branch = ' '                                           
+let g:airline_symbols.readonly = ' '                                         
+let g:airline_symbols.linenr = ' '     
 " 使用左箭头选择上一个缓冲区
 noremap <unique><LEFT> :bp<CR>
 " 使用右箭头选择下一个缓冲区
