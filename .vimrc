@@ -20,7 +20,15 @@ Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'honza/vim-snippets' 
 Plugin 'fatih/vim-go'
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
 call vundle#end()
+
+call glaive#Install()
+
+Glaive codefmt plugin[mappings]
+Glaive codefmt clang_format_executable="/usr/bin/clang-format"
 
 """"""""""""""""""""""""""""""""""""""""
 " 一般设定
@@ -285,6 +293,20 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 """"""""""""""""""""""""""""""""""""""""
+" vim-codefmt
+""""""""""""""""""""""""""""""""""""""""
+augroup autoformat_settings
+    autocmd FileType bzl AutoFormatBuffer buildifier
+    autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+    autocmd FileType dart AutoFormatBuffer dartfmt
+    " autocmd FileType go AutoFormatBuffer gofmt
+    autocmd FileType gn AutoFormatBuffer gn
+    autocmd FileType html,css,json AutoFormatBuffer js-beautify
+    autocmd FileType java AutoFormatBuffer google-java-format
+    autocmd FileType python AutoFormatBuffer yapf
+augroup END
+
+""""""""""""""""""""""""""""""""""""""""
 " 语言设定
 """"""""""""""""""""""""""""""""""""""""
 
@@ -323,3 +345,7 @@ au FileType go nmap <leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <leader>s <Plug>(go-implements)
 au FileType go nmap <leader>i <Plug>(go-info)
 au FileType go nmap <leader>e <Plug>(go-rename)
+
+""""""""""""""""""""""""""""""""""""""""
+" Lang - Go
+""""""""""""""""""""""""""""""""""""""""
